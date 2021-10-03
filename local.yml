@@ -3,6 +3,7 @@ version: '3'
 volumes:
   local_postgres_data: {}
   local_postgres_data_backups: {}
+  local_media_files: {}
 
 services:
   django:
@@ -15,6 +16,7 @@ services:
       - postgres
     volumes:
       - .:/app:z
+      - local_media_files:/var/mediafiles:z
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres

@@ -60,6 +60,12 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    # https://django-grappelli.readthedocs.io/en/latest/dashboard_setup.html
+    'grappelli.dashboard',
+    # https://django-grappelli.readthedocs.io/en/latest/quickstart.html#setup
+    'grappelli',
+    # https://django-filebrowser.readthedocs.io/en/latest/quickstart.html#installation
+    'filebrowser',
     "django.contrib.admin",
     "django.forms",
 ]
@@ -149,7 +155,7 @@ STATICFILES_FINDERS = [
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR / "media")
+MEDIA_ROOT = "/var/mediafiles"
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = "/media/"
 
@@ -268,3 +274,7 @@ SOCIALACCOUNT_ADAPTER = "bakery.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# https://django-grappelli.readthedocs.io/en/latest/dashboard_setup.html#custom-dashboard
+GRAPPELLI_INDEX_DASHBOARD = 'bakery.dashboard.CustomIndexDashboard'
