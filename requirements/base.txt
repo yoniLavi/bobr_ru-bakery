@@ -19,3 +19,7 @@ django-redis==5.0.0  # https://github.com/jazzband/django-redis
 # ------------------------------------------------------------------------------
 django-grappelli==2.15.1  # https://github.com/sehmaschine/django-grappelli
 django-filebrowser==3.14.1  # https://github.com/sehmaschine/django-filebrowser
+
+# utils
+# ------------------------------------------------------------------------------
+wrapt==1.13.1  # https://github.com/GrahamDumpleton/wrapt

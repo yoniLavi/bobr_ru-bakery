@@ -52,6 +52,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # APPS
 # ------------------------------------------------------------------------------
+CUSTOM_APPS = [
+    "bakery.custom_filebrowser",
+    # https://django-grappelli.readthedocs.io/en/latest/dashboard_setup.html
+    'grappelli.dashboard',
+    # https://django-grappelli.readthedocs.io/en/latest/quickstart.html#setup
+    'grappelli',
+    # https://django-filebrowser.readthedocs.io/en/latest/quickstart.html#installation
+    'filebrowser',
+]
 DJANGO_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -60,12 +69,6 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
-    # https://django-grappelli.readthedocs.io/en/latest/dashboard_setup.html
-    'grappelli.dashboard',
-    # https://django-grappelli.readthedocs.io/en/latest/quickstart.html#setup
-    'grappelli',
-    # https://django-filebrowser.readthedocs.io/en/latest/quickstart.html#installation
-    'filebrowser',
     "django.contrib.admin",
     "django.forms",
 ]
@@ -81,7 +84,7 @@ LOCAL_APPS = [
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = CUSTOM_APPS + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIGRATIONS
 # ------------------------------------------------------------------------------

@@ -12,6 +12,7 @@ Welcome to bakery's documentation!
 
    howto
    users
+   filebrowser
 
 
 

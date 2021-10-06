@@ -69,6 +69,7 @@ class CustomIndexDashboard(Dashboard):
                     'url': '/admin/filebrowser/browse/',
                     'external': False,
                 },
+                # TODO: append a link to firmware storage
             ]
         ))
 

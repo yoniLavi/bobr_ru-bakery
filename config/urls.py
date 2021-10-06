@@ -14,6 +14,7 @@ urlpatterns = [
     # grappelli
     path('admin/filebrowser/', site.urls),
     path('grappelli/', include('grappelli.urls')),
+    # TODO: add routing to a firmware site
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
