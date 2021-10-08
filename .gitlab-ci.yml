@@ -29,7 +29,7 @@ pytest:
     # Ensure celerybeat does not crash due to non-existent tables
     - docker-compose -f local.yml run --rm django python manage.py migrate
     # Collect static files for whitenoise
-    - docker-compose -f local.yml run --rm django python manage.py collectstatiic
+    - docker-compose -f local.yml run --rm django python manage.py collectstatic
     # Create directories for filebrowser
     - docker-compose -f local.yml run --rm django mkdir -p /var/mediafiles/{uploads,firmware}
     - docker-compose -f local.yml up -d
