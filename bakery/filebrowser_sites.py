@@ -1,4 +1,3 @@
-from django.core.files.base import File
 from bakery.custom_filebrowser.sites import FileBrowserSite
 from filebrowser.sites import site as default_site  # noqa
 
