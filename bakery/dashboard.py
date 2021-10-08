@@ -7,7 +7,7 @@ To activate your index dashboard add the following to your settings.py::
 """
 
 from django.utils.translation import gettext_lazy as _
-# from django.urls import reverse
+from django.urls import reverse
 
 from grappelli.dashboard import modules, Dashboard
 # from grappelli.dashboard.utils import get_admin_site_name
@@ -69,7 +69,11 @@ class CustomIndexDashboard(Dashboard):
                     'url': '/admin/filebrowser/browse/',
                     'external': False,
                 },
-                # TODO: append a link to firmware storage
+                {
+                    'title': _('Firmware'),
+                    'url': reverse('firmware:fb_browse'),
+                    'external': False,
+                },
             ]
         ))
 

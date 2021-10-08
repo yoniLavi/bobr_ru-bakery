@@ -4,7 +4,8 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
-from filebrowser.sites import site
+from bakery import filebrowser_sites as fb_sites
+
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
@@ -12,15 +13,15 @@ urlpatterns = [
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
     # grappelli
-    path('admin/filebrowser/', site.urls),
+    path('admin/filebrowser/', fb_sites.default_site.urls),
     path('grappelli/', include('grappelli.urls')),
-    # TODO: add routing to a firmware site
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("bakery.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path('firmware', fb_sites.firmware_site.urls, name='firmware'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
